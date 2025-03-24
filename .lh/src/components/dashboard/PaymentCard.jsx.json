@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/dashboard/PaymentCard.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1738563168973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1738563168973,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n\nexport const PaymentCard = () => {\n  return (\n    <div className=\"col-6 mb-4\">\n      <div className=\"card\">\n        <div className=\"card-body\">\n          <div className=\"card-title d-flex align-items-start justify-content-between\">\n            <div className=\"avatar flex-shrink-0\">\n              <img\n                aria-label=\"dsahboard icon image\"\n                src=\"/assets/img/icons/unicons/paypal.png\"\n                alt=\"Credit Card\"\n                className=\"rounded\"\n              />\n            </div>\n            <div className=\"dropdown\">\n              <button\n                aria-label=\"Click me\"\n                className=\"btn p-0\"\n                type=\"button\"\n                id=\"cardOpt4\"\n                data-bs-toggle=\"dropdown\"\n                aria-haspopup=\"true\"\n                aria-expanded=\"false\"\n              >\n                <i className=\"bx bx-dots-vertical-rounded\"></i>\n              </button>\n              <div\n                className=\"dropdown-menu dropdown-menu-end\"\n                aria-labelledby=\"cardOpt4\"\n              >\n                <a\n                  aria-label=\"view more\"\n                  className=\"dropdown-item\"\n                  href=\"#\"\n                >\n                  View More\n                </a>\n                <a\n                  aria-label=\"delete\"\n                  className=\"dropdown-item\"\n                  href=\"#\"\n                >\n                  View More\n                </a>\n              </div>\n            </div>\n          </div>\n          <span className=\"d-block mb-1\">Payments</span>\n          <h3 className=\"card-title text-nowrap mb-2\">$2,456</h3>\n          <small className=\"text-danger fw-medium\">\n            <i className=\"bx bx-down-arrow-alt\"></i> -14.82%\n          </small>\n        </div>\n      </div>\n    </div>\n  );\n};"
+        }
+    ]
+}

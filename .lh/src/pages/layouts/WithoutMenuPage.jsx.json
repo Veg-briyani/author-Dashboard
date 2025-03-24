@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/pages/layouts/WithoutMenuPage.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1738565503881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738565511074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+import LayoutExample from \"../../components/layouts-example/LayoutWrapper\";\n+\n+export const WithoutMenuPage = () => {\n+  return (\n+    <LayoutExample\n+      img=\"/assets/img/layouts/layout-without-menu-light.png\"\n+      alt=\"Layout without menu\"\n+      title=\"Layout without Menu (Navigation)\"\n+    ></LayoutExample>\n+  );\n+};\n"
+                }
+            ],
+            "date": 1738565503881,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

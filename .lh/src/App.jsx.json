@@ -1,0 +1,66 @@
+{
+    "sourceFile": "src/App.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1738673689020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738673695086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,14 @@\n import { Blank } from \"./layouts/Blank\";\n \n function App() {\n   const location = useLocation();\n+  location.pathname.includes(\"auth\") ||\n+    location.pathname.includes(\"error\") ||\n+    location.pathname.includes(\"under-maintenance\") ||\n+    location.pathname.includes(\"blank\");\n+\n+  const isAuthPath = location.pathname.includes(\"auth\") || location.pathname.includes(\"error\") || location.pathname.includes(\"under-maintenance\") || location.pathname.includes(\"blank\");\n   // const isAuthPath = location.pathname.includes(\"auth\") || location.pathname.includes(\"error\") || location.pathname.includes(\"under-maintenance\") | location.pathname.includes(\"blank\");\n   return (\n     <>\n       {isAuthPath ? (\n"
+                },
+                {
+                    "date": 1738673752120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { Blank } from \"./layouts/Blank\";\n \n function App() {\n   const location = useLocation();\n-  location.pathname.includes(\"auth\") ||\n+  location.pathname.includes(\"auths\") ||\n     location.pathname.includes(\"error\") ||\n     location.pathname.includes(\"under-maintenance\") ||\n     location.pathname.includes(\"blank\");\n \n"
+                },
+                {
+                    "date": 1738673764270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { Blank } from \"./layouts/Blank\";\n \n function App() {\n   const location = useLocation();\n-  location.pathname.includes(\"auths\") ||\n+  location.pathname.includes(\"auth\") ||\n     location.pathname.includes(\"error\") ||\n     location.pathname.includes(\"under-maintenance\") ||\n     location.pathname.includes(\"blank\");\n \n"
+                },
+                {
+                    "date": 1738673794016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n \n function App() {\n   const location = useLocation();\n   location.pathname.includes(\"auth\") ||\n+    location.pathname.startsWith(\"/author/\") ||\n     location.pathname.includes(\"error\") ||\n     location.pathname.includes(\"under-maintenance\") ||\n     location.pathname.includes(\"blank\");\n \n"
+                },
+                {
+                    "date": 1738673807576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n import { Blank } from \"./layouts/Blank\";\n \n function App() {\n   const location = useLocation();\n-  location.pathname.includes(\"auth\") ||\n-    location.pathname.startsWith(\"/author/\") ||\n+  location.pathname.includes(\"auth\")\n+    ||\n     location.pathname.includes(\"error\") ||\n     location.pathname.includes(\"under-maintenance\") ||\n     location.pathname.includes(\"blank\");\n \n"
+                },
+                {
+                    "date": 1738726428814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,15 @@\n+import { useLocation } from \"react-router-dom\";\n+import Layout from \"./layouts/Layout\";\n+import AppRoutes from \"./router/AppRoutes\";\n+import { Blank } from \"./layouts/Blank\";\n+import { ThemeProvider } from './contexts/ThemeContext';\n+\n+function App() {\n+  return (\n+    <ThemeProvider>\n+      {/* Your existing app content */}\n+    </ThemeProvider>\n+  );\n+}\n+\n+export default App;\n"
+                },
+                {
+                    "date": 1738726476069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,15 @@\n+import { useLocation } from \"react-router-dom\";\n+import Layout from \"./layouts/Layout\";\n+import AppRoutes from \"./router/AppRoutes\";\n+import { Blank } from \"./layouts/Blank\";\n+import { ThemeProvider } from './contexts/ThemeContext';\n+\n+function App() {\n+  return (\n+    <ThemeProvider>\n+      {/* Your existing app content */}\n+    </ThemeProvider>\n+  );\n+}\n+\n+export default App;\n"
+                },
+                {
+                    "date": 1738726645892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,50 +12,4 @@\n   );\n }\n \n export default App;\n-import { useLocation } from \"react-router-dom\";\n-import Layout from \"./layouts/Layout\";\n-import AppRoutes from \"./router/AppRoutes\";\n-import { Blank } from \"./layouts/Blank\";\n-import { ThemeProvider } from './contexts/ThemeContext';\n-\n-function App() {\n-  return (\n-    <ThemeProvider>\n-      {/* Your existing app content */}\n-    </ThemeProvider>\n-  );\n-}\n-\n-export default App;\n-import { useLocation } from \"react-router-dom\";\n-import Layout from \"./layouts/Layout\";\n-import AppRoutes from \"./router/AppRoutes\";\n-import { Blank } from \"./layouts/Blank\";\n-\n-function App() {\n-  const location = useLocation();\n-  location.pathname.includes(\"auth\")\n-    ||\n-    location.pathname.includes(\"error\") ||\n-    location.pathname.includes(\"under-maintenance\") ||\n-    location.pathname.includes(\"blank\");\n-\n-  const isAuthPath = location.pathname.includes(\"auth\") || location.pathname.includes(\"error\") || location.pathname.includes(\"under-maintenance\") || location.pathname.includes(\"blank\");\n-  // const isAuthPath = location.pathname.includes(\"auth\") || location.pathname.includes(\"error\") || location.pathname.includes(\"under-maintenance\") | location.pathname.includes(\"blank\");\n-  return (\n-    <>\n-      {isAuthPath ? (\n-        <AppRoutes>\n-            <Blank/>\n-          </AppRoutes>\n-      ) : (\n-        <Layout>\n-          <AppRoutes />\n-        </Layout>\n-      )}\n-    </>\n-  );\n-}\n-\n-export default App;\n"
+                },
+                {
+                    "date": 1738726678664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,34 @@\n import { useLocation } from \"react-router-dom\";\n import Layout from \"./layouts/Layout\";\n import AppRoutes from \"./router/AppRoutes\";\n import { Blank } from \"./layouts/Blank\";\n-import { ThemeProvider } from './contexts/ThemeContext';\n+import { ThemeProvider } from \"./contexts/ThemeContext\";\n+function App() {\n+  const location = useLocation();\n+  location.pathname.includes(\"auth\") ||\n+    location.pathname.includes(\"error\") ||\n+    location.pathname.includes(\"under-maintenance\") ||\n+    location.pathname.includes(\"blank\");\n \n-function App() {\n+  const isAuthPath =\n+    location.pathname.includes(\"auth\") ||\n+    location.pathname.includes(\"error\") ||\n+    location.pathname.includes(\"under-maintenance\") ||\n+    location.pathname.includes(\"blank\");\n+  // const isAuthPath = location.pathname.includes(\"auth\") || location.pathname.includes(\"error\") || location.pathname.includes(\"under-maintenance\") | location.pathname.includes(\"blank\");\n   return (\n-    <ThemeProvider>\n-      {/* Your existing app content */}\n-    </ThemeProvider>\n+    <>\n+      {isAuthPath ? (\n+        <AppRoutes>\n+          <Blank />\n+        </AppRoutes>\n+      ) : (\n+        <Layout>\n+          <AppRoutes />\n+        </Layout>\n+      )}\n+    </>\n   );\n }\n \n export default App;\n"
+                },
+                {
+                    "date": 1738726689617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n     location.pathname.includes(\"blank\");\n   // const isAuthPath = location.pathname.includes(\"auth\") || location.pathname.includes(\"error\") || location.pathname.includes(\"under-maintenance\") | location.pathname.includes(\"blank\");\n   return (\n     <>\n+       <ThemeProvider></ThemeProvider>\n       {isAuthPath ? (\n         <AppRoutes>\n           <Blank />\n         </AppRoutes>\n"
+                },
+                {
+                    "date": 1738726702937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,18 +17,19 @@\n     location.pathname.includes(\"blank\");\n   // const isAuthPath = location.pathname.includes(\"auth\") || location.pathname.includes(\"error\") || location.pathname.includes(\"under-maintenance\") | location.pathname.includes(\"blank\");\n   return (\n     <>\n-       <ThemeProvider>\n-      {isAuthPath ? (\n-        <AppRoutes>\n-          <Blank />\n-        </AppRoutes>\n-      ) : (\n-        <Layout>\n-          <AppRoutes />\n-        </Layout>\n-      )}\n+      <ThemeProvider>\n+        {isAuthPath ? (\n+          <AppRoutes>\n+            <Blank />\n+          </AppRoutes>\n+        ) : (\n+          <Layout>\n+            <AppRoutes />\n+          </Layout>\n+        )}\n+      </ThemeProvider>\n     </>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1738755114607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,32 @@\n+import { useLocation } from \"react-router-dom\";\n+import Layout from \"./layouts/Layout\";\n+import AppRoutes from \"./router/AppRoutes\";\n+import { Blank } from \"./layouts/Blank\";\n+import { ThemeProvider } from \"./contexts/ThemeContext\";\n+function App() {\n+  const location = useLocation();\n+  location.pathname.includes(\"auth\") ||\n+    location.pathname.includes(\"error\") ||\n+    location.pathname.includes(\"under-maintenance\") ||\n+    location.pathname.includes(\"blank\");\n+\n+  const isAuthPath =\n+    location.pathname.includes(\"auth\") ||\n+    location.pathname.includes(\"error\") ||\n+    location.pathname.includes(\"under-maintenance\") ||\n+    location.pathname.includes(\"blank\");\n+  // const isAuthPath = location.pathname.includes(\"auth\") || location.pathname.includes(\"error\") || location.pathname.includes(\"under-maintenance\") | location.pathname.includes(\"blank\");\n+  return (\n+    <>\n+      <ThemeProvider>\n+        \n+          <Layout>\n+            <AppRoutes />\n+          </Layout>\n+   \n+      </ThemeProvider>\n+    </>\n+  );\n+}\n+\n+export default App;\n"
+                }
+            ],
+            "date": 1738673689020,
+            "name": "Commit-0",
+            "content": "import { useLocation } from \"react-router-dom\";\nimport Layout from \"./layouts/Layout\";\nimport AppRoutes from \"./router/AppRoutes\";\nimport { Blank } from \"./layouts/Blank\";\n\nfunction App() {\n  const location = useLocation();\n  // const isAuthPath = location.pathname.includes(\"auth\") || location.pathname.includes(\"error\") || location.pathname.includes(\"under-maintenance\") | location.pathname.includes(\"blank\");\n  return (\n    <>\n      {isAuthPath ? (\n        <AppRoutes>\n            <Blank/>\n          </AppRoutes>\n      ) : (\n        <Layout>\n          <AppRoutes />\n        </Layout>\n      )}\n    </>\n  );\n}\n\nexport default App;\n"
+        }
+    ]
+}

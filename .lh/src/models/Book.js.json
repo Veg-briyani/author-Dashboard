@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/models/Book.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1738751020013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738751174095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,62 @@\n+const mongoose = require('mongoose');\n+\n+const bookSchema = new mongoose.Schema({\n+  title: {\n+    type: String,\n+    required: true\n+  },\n+  author: {\n+    type: mongoose.Schema.Types.ObjectId,\n+    ref: 'User',\n+    required: true\n+  },\n+  language: String,\n+  genre: String,\n+  isbn: {\n+    type: String,\n+    unique: true,\n+    required: true\n+  },\n+  pages: Number,\n+  coverType: String,\n+  price: {\n+    type: Number,\n+    required: true\n+  },\n+  coverImage: String,\n+  description: String,\n+  publishingDetails: {\n+    edition: Date,\n+    quantity: Number,\n+    mrp: Number,\n+    royaltyPercentage: Number,\n+    soldCopies: {\n+      type: Number,\n+      default: 0\n+    },\n+    royaltyEarned: {\n+      type: Number,\n+      default: 0\n+    }\n+  },\n+  status: {\n+    type: String,\n+    enum: ['draft', 'published', 'out-of-stock'],\n+    default: 'draft'\n+  },\n+  createdAt: {\n+    type: Date,\n+    default: Date.now\n+  },\n+  updatedAt: {\n+    type: Date,\n+    default: Date.now\n+  }\n+});\n+\n+bookSchema.pre('save', function(next) {\n+  this.updatedAt = Date.now();\n+  next();\n+});\n+\n+module.exports = mongoose.model('Book', bookSchema);\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1738751020013,
+            "name": "Commit-0",
+            "content": "const mongoose = require('mongoose');\n\nconst bookSchema = new mongoose.Schema({\n  title: {\n    type: String,\n    required: true\n  },\n  description: {\n    type: String,\n    required: true\n  },\n  price: {\n    type: Number,\n    required: true\n  },\n  author: {\n    type: mongoose.Schema.Types.ObjectId,\n    ref: 'User',\n    required: true\n  },\n  createdAt: {\n    type: Date,\n    default: Date.now\n  }\n});\n\nmodule.exports = mongoose.model('Book', bookSchema);"
+        }
+    ]
+}

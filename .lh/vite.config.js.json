@@ -1,0 +1,38 @@
+{
+    "sourceFile": "vite.config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1738569976324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738643997836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,13 @@\n import { defineConfig } from 'vite'\n import react from '@vitejs/plugin-react-swc'\n+import path from 'path';\n \n // https://vitejs.dev/config/\n export default defineConfig({\n   plugins: [react()],\n-})\n-```\n+  resolve: {\n+    alias: {\n+      '@': path.resolve(__dirname, './src'),\n+    },\n+  },\n+});\n"
+                },
+                {
+                    "date": 1738689061340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n import { defineConfig } from 'vite'\n-import react from '@vitejs/plugin-react-swc'\n-import path from 'path';\n+import react from '@vitejs/plugin-react'\n \n // https://vitejs.dev/config/\n export default defineConfig({\n   plugins: [react()],\n-  resolve: {\n-    alias: {\n-      '@': path.resolve(__dirname, './src'),\n-    },\n-  },\n-});\n+  server: {\n+    allowedHosts: [\n+      '701c-2405-201-5c15-894-fdd5-a371-32b3-b158.ngrok-free.app',\n+      // keep any existing allowed hosts\n+    ]\n+  }\n+})\n"
+                },
+                {
+                    "date": 1738694312717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n   plugins: [react()],\n   server: {\n     allowedHosts: [\n       '701c-2405-201-5c15-894-fdd5-a371-32b3-b158.ngrok-free.app',\n+      all\n       // keep any existing allowed hosts\n     ]\n   }\n })\n"
+                },
+                {
+                    "date": 1738694320033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n   plugins: [react()],\n   server: {\n     allowedHosts: [\n       '701c-2405-201-5c15-894-fdd5-a371-32b3-b158.ngrok-free.app',\n-      all\n       // keep any existing allowed hosts\n     ]\n   }\n })\n"
+                },
+                {
+                    "date": 1738694470616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n export default defineConfig({\n   plugins: [react()],\n   server: {\n     allowedHosts: [\n-      '701c-2405-201-5c15-894-fdd5-a371-32b3-b158.ngrok-free.app',\n+      '8888-2405-201-5c15-894-fdd5-a371-32b3-b158.ngrok-free.app',\n       // keep any existing allowed hosts\n     ]\n   }\n })\n"
+                }
+            ],
+            "date": 1738569976324,
+            "name": "Commit-0",
+            "content": "import { defineConfig } from 'vite'\nimport react from '@vitejs/plugin-react-swc'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [react()],\n})\n```\n"
+        }
+    ]
+}

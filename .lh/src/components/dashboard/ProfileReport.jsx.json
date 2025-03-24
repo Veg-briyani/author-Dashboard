@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/dashboard/ProfileReport.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1738563183310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738563203427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-import React from 'react';\n \n export const ProfileReport = () => {\n   return (\n     <div className=\"col-12 mb-4\">\n"
+                }
+            ],
+            "date": 1738563183310,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n\nexport const ProfileReport = () => {\n  return (\n    <div className=\"col-12 mb-4\">\n      <div className=\"card\">\n        <div className=\"card-body\">\n          <div className=\"d-flex justify-content-between flex-sm-row flex-column gap-3\">\n            <div className=\"d-flex flex-sm-column flex-row align-items-start justify-content-between\">\n              <div className=\"card-title\">\n                <h5 className=\"text-nowrap mb-2\">Profile Report</h5>\n                <span className=\"badge bg-label-warning rounded-pill\">\n                  Year 2021\n                </span>\n              </div>\n              <div className=\"mt-sm-auto\">\n                <small className=\"text-success text-nowrap fw-medium\">\n                  <i className=\"bx bx-chevron-up\"></i> 68.2%\n                </small>\n                <h3 className=\"mb-0\">$84,686k</h3>\n              </div>\n            </div>\n            <div id=\"profileReportChart\"></div>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};"
+        }
+    ]
+}

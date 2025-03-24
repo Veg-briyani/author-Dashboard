@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/Redux/authSlice.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1738751396835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1738751396835,
+            "name": "Commit-0",
+            "content": "import { createSlice } from '@reduxjs/toolkit';\n\nconst initialState = {\n  user: null,\n  isAuthenticated: false,\n  loading: false,\n  error: null\n};\n\nconst authSlice = createSlice({\n  name: 'auth',\n  initialState,\n  reducers: {\n    loginStart: (state) => {\n      state.loading = true;\n      state.error = null;\n    },\n    loginSuccess: (state, action) => {\n      state.loading = false;\n      state.isAuthenticated = true;\n      state.user = action.payload;\n      state.error = null;\n    },\n    loginFailure: (state, action) => {\n      state.loading = false;\n      state.error = action.payload;\n    },\n    logout: (state) => {\n      state.user = null;\n      state.isAuthenticated = false;\n      state.loading = false;\n      state.error = null;\n    }\n  }\n});\n\nexport const { loginStart, loginSuccess, loginFailure, logout } = authSlice.actions;\nexport default authSlice.reducer;"
+        }
+    ]
+}

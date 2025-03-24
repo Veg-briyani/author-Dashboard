@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/models/Transaction.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1738751026718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738751185953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,21 +5,27 @@\n     type: mongoose.Schema.Types.ObjectId,\n     ref: 'User',\n     required: true\n   },\n+  type: {\n+    type: String,\n+    enum: ['royalty', 'advance', 'refund'],\n+    required: true\n+  },\n   amount: {\n     type: Number,\n     required: true\n   },\n-  type: {\n+  status: {\n     type: String,\n-    enum: ['royalty', 'refund'],\n-    required: true\n+    enum: ['pending', 'completed', 'failed'],\n+    default: 'pending'\n   },\n-  description: String,\n-  transactionDate: {\n+  date: {\n     type: Date,\n     default: Date.now\n-  }\n+  },\n+  description: String,\n+  reference: String\n });\n \n module.exports = mongoose.model('Transaction', transactionSchema);\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1738751026718,
+            "name": "Commit-0",
+            "content": "const mongoose = require('mongoose');\n\nconst transactionSchema = new mongoose.Schema({\n  author: {\n    type: mongoose.Schema.Types.ObjectId,\n    ref: 'User',\n    required: true\n  },\n  amount: {\n    type: Number,\n    required: true\n  },\n  type: {\n    type: String,\n    enum: ['royalty', 'refund'],\n    required: true\n  },\n  description: String,\n  transactionDate: {\n    type: Date,\n    default: Date.now\n  }\n});\n\nmodule.exports = mongoose.model('Transaction', transactionSchema);"
+        }
+    ]
+}

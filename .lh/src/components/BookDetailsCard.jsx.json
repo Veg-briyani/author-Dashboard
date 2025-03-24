@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/BookDetailsCard.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1738643954916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1738643954916,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport { Book, User, DollarSign, Tag, FileText, Paperclip, Star, BookOpen } from \"lucide-react\";\n\nexport const BookDetailsCard = ({ details, title, icon }) => {\n  return (\n    <div className=\"bg-white rounded-3xl shadow-lg overflow-hidden p-6\">\n      <h6 className=\"text-xl font-bold text-gray-800 mb-4 flex items-center gap-2\">\n        {icon}\n        {title}\n      </h6>\n      <div className=\"grid grid-cols-2 gap-4\">\n        {details.map((detail, index) => (\n          <div\n            key={index}\n            className=\"flex items-center space-x-3 p-3 bg-gray-50 rounded-xl\"\n          >\n            <div className=\"p-2 bg-white rounded-lg\">\n              {detail.icon}\n            </div>\n            <div>\n              <p className=\"text-sm text-gray-500\">{detail.label}</p>\n              <p className=\"font-medium text-gray-800\">{detail.value}</p>\n            </div>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n};"
+        }
+    ]
+}

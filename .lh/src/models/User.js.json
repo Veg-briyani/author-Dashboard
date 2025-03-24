@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/models/User.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1738751015398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738751172125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,37 @@\n   password: {\n     type: String,\n     required: true\n   },\n-  createdAt: {\n+  role: {\n+    type: String,\n+    enum: ['author', 'admin'],\n+    default: 'author'\n+  },\n+  profileImage: String,\n+  bio: String,\n+  memberSince: {\n     type: Date,\n     default: Date.now\n+  },\n+  socialLinks: {\n+    facebook: String,\n+    twitter: String,\n+    website: String\n+  },\n+  stats: {\n+    totalPublications: {\n+      type: Number,\n+      default: 0\n+    },\n+    totalSales: {\n+      type: Number,\n+      default: 0\n+    },\n+    averageRating: {\n+      type: Number,\n+      default: 0\n+    }\n   }\n });\n \n module.exports = mongoose.model('User', userSchema);\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1738751015398,
+            "name": "Commit-0",
+            "content": "const mongoose = require('mongoose');\n\nconst userSchema = new mongoose.Schema({\n  fullName: {\n    type: String,\n    required: true\n  },\n  email: {\n    type: String,\n    required: true,\n    unique: true\n  },\n  password: {\n    type: String,\n    required: true\n  },\n  createdAt: {\n    type: Date,\n    default: Date.now\n  }\n});\n\nmodule.exports = mongoose.model('User', userSchema);"
+        }
+    ]
+}

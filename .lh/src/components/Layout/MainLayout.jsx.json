@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/components/Layout/MainLayout.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1738672575918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738672595898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React from 'react';\n+\n import { Outlet } from 'react-router-dom';\n import Header from '../Header';  // adjust the import path as per your project structure\n import Sidebar from '../Sidebar';  // adjust the import path as per your project structure\n \n"
+                },
+                {
+                    "date": 1738672657547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n+import React from \"react\";\n+import { Outlet } from \"react-router-dom\";\n+import Header from \"../../layouts/Header\"; // Updated import path\n+import Sidebar from \"../../layouts/Sidebar\"; // Updated import path\n \n-import { Outlet } from 'react-router-dom';\n-import Header from '../Header';  // adjust the import path as per your project structure\n-import Sidebar from '../Sidebar';  // adjust the import path as per your project structure\n-\n const MainLayout = () => {\n   return (\n     <div className=\"layout-wrapper\">\n       <Header />\n@@ -14,5 +14,5 @@\n     </div>\n   );\n };\n \n-export default MainLayout;\n\\ No newline at end of file\n+export default MainLayout;\n"
+                },
+                {
+                    "date": 1738672708612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+import React from \"react\";\n+import { Outlet } from \"react-router-dom\";\n+import Header from \"../../layouts/Header\"; // Updated import path\n+import Sidebar from \"src/layouts/Sidebar.jsx\"; // Updated import path\n+\n+const MainLayout = () => {\n+  return (\n+    <div className=\"layout-wrapper\">\n+      <Header />\n+      <Sidebar />\n+      <div className=\"layout-content\">\n+        <Outlet />\n+      </div>\n+    </div>\n+  );\n+};\n+\n+export default MainLayout;\n"
+                },
+                {
+                    "date": 1738672717319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+import React from \"react\";\n+import { Outlet } from \"react-router-dom\";\n+// import Header from \"../../layouts/Header\"; // Updated import path\n+import Sidebar from \"src/layouts/Sidebar.jsx\"; // Updated import path\n+\n+const MainLayout = () => {\n+  return (\n+    <div className=\"layout-wrapper\">\n+      <Header />\n+      <Sidebar />\n+      <div className=\"layout-content\">\n+        <Outlet />\n+      </div>\n+    </div>\n+  );\n+};\n+\n+export default MainLayout;\n"
+                },
+                {
+                    "date": 1738672726505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React from \"react\";\n+\n import { Outlet } from \"react-router-dom\";\n // import Header from \"../../layouts/Header\"; // Updated import path\n import Sidebar from \"src/layouts/Sidebar.jsx\"; // Updated import path\n \n"
+                }
+            ],
+            "date": 1738672575918,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport { Outlet } from 'react-router-dom';\nimport Header from '../Header';  // adjust the import path as per your project structure\nimport Sidebar from '../Sidebar';  // adjust the import path as per your project structure\n\nconst MainLayout = () => {\n  return (\n    <div className=\"layout-wrapper\">\n      <Header />\n      <Sidebar />\n      <div className=\"layout-content\">\n        <Outlet />\n      </div>\n    </div>\n  );\n};\n\nexport default MainLayout;"
+        }
+    ]
+}

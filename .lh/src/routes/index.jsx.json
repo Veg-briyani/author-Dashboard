@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/routes/index.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1738637448002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738641699935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,4 @@\n-// ... existing imports ...\n-import { AuthorDetails } from \"../pages/AuthorDetails\";\n-\n-// ... existing routes ...\n {\n-  path: \"/author-details\",\n-  element: <AuthorDetails />,\n+  path: \"/author-books\",\n+  element: <AuthorBooks />,\n },\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738641708710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,1 @@\n-{\n-  path: \"/author-books\",\n-  element: <AuthorBooks />,\n-},\n\\ No newline at end of file\n+ \n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1738637448002,
+            "name": "Commit-0",
+            "content": "// ... existing imports ...\nimport { AuthorDetails } from \"../pages/AuthorDetails\";\n\n// ... existing routes ...\n{\n  path: \"/author-details\",\n  element: <AuthorDetails />,\n},"
+        }
+    ]
+}

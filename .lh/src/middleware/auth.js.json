@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/middleware/auth.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1738751029694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1738751029694,
+            "name": "Commit-0",
+            "content": "const jwt = require('jsonwebtoken');\nconst User = require('../models/User');\n\nmodule.exports = async (req, res, next) => {\n  try {\n    const token = req.cookies.token;\n\n    if (!token) {\n      return res.status(401).json({ message: 'No token, authorization denied' });\n    }\n\n    const decoded = jwt.verify(token, process.env.JWT_SECRET);\n    const user = await User.findById(decoded.userId).select('-password');\n    \n    if (!user) {\n      return res.status(401).json({ message: 'Token is not valid' });\n    }\n\n    req.user = user;\n    next();\n  } catch (err) {\n    res.status(401).json({ message: 'Token is not valid' });\n  }\n};"
+        }
+    ]
+}

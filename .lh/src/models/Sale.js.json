@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/models/Sale.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1738751023199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738751176904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,11 +18,25 @@\n   totalAmount: {\n     type: Number,\n     required: true\n   },\n-  saleDate: {\n+  royaltyAmount: {\n+    type: Number,\n+    required: true\n+  },\n+  purchaseDate: {\n     type: Date,\n     default: Date.now\n+  },\n+  customer: {\n+    name: {\n+      type: String,\n+      required: true\n+    },\n+    email: {\n+      type: String,\n+      required: true\n+    }\n   }\n });\n \n module.exports = mongoose.model('Sale', saleSchema);\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1738751023199,
+            "name": "Commit-0",
+            "content": "const mongoose = require('mongoose');\n\nconst saleSchema = new mongoose.Schema({\n  book: {\n    type: mongoose.Schema.Types.ObjectId,\n    ref: 'Book',\n    required: true\n  },\n  author: {\n    type: mongoose.Schema.Types.ObjectId,\n    ref: 'User',\n    required: true\n  },\n  quantity: {\n    type: Number,\n    required: true\n  },\n  totalAmount: {\n    type: Number,\n    required: true\n  },\n  saleDate: {\n    type: Date,\n    default: Date.now\n  }\n});\n\nmodule.exports = mongoose.model('Sale', saleSchema);"
+        }
+    ]
+}

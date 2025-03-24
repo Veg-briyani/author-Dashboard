@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/LoginPage.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1739016343174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1739016343174,
+            "name": "Commit-0",
+            "content": "import React, { useState } from 'react';\nimport { useNavigate } from 'react-router-dom';\n// import { authAPI } from '../services/api';\n\nconst LoginPage = () => {\n  const navigate = useNavigate();\n  const [formData, setFormData] = useState({\n    email: '',\n    password: ''\n  });\n  const [error, setError] = useState('');\n\n  const handleChange = (e) => {\n    setFormData({\n      ...formData,\n      [e.target.name]: e.target.value\n    });\n  };\n\n  const handleSubmit = async (e) => {\n    e.preventDefault();\n    try {\n      const response = await authAPI.login(formData);\n      localStorage.setItem('token', response.data.token);\n      navigate('/dashboard');\n    } catch (error) {\n      setError(error.response?.data?.message || 'Login failed');\n    }\n  };\n\n  return (\n    <div className=\"authentication-wrapper authentication-basic container-p-y\">\n      <div className=\"authentication-inner\">\n        <div className=\"card\">\n          <div className=\"card-body\">\n            <h4 className=\"mb-2\">Welcome to Dashboard! 👋</h4>\n            <p className=\"mb-4\">Please sign-in to your account</p>\n\n            {error && <div className=\"alert alert-danger\">{error}</div>}\n\n            <form className=\"mb-3\" onSubmit={handleSubmit}>\n              <div className=\"mb-3\">\n                <label htmlFor=\"email\" className=\"form-label\">Email</label>\n                <input\n                  type=\"email\"\n                  className=\"form-control\"\n                  id=\"email\"\n                  name=\"email\"\n                  value={formData.email}\n                  onChange={handleChange}\n                  placeholder=\"Enter your email\"\n                  required\n                />\n              </div>\n              <div className=\"mb-3\">\n                <label htmlFor=\"password\" className=\"form-label\">Password</label>\n                <input\n                  type=\"password\"\n                  className=\"form-control\"\n                  id=\"password\"\n                  name=\"password\"\n                  value={formData.password}\n                  onChange={handleChange}\n                  placeholder=\"Enter your password\"\n                  required\n                />\n              </div>\n              <button type=\"submit\" className=\"btn btn-primary d-grid w-100\">\n                Sign in\n              </button>\n            </form>\n\n            <p className=\"text-center\">\n              <span>New on our platform?</span>\n              <a href=\"/register\">\n                <span>Create an account</span>\n              </a>\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default LoginPage;"
+        }
+    ]
+}
